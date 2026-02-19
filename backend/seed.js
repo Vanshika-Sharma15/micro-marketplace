@@ -1,12 +1,16 @@
+require("dotenv").config();
+
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 
 const User = require("./models/User");
 const Product = require("./models/Product");
 
-mongoose.connect("mongodb://127.0.0.1:27017/microdb")
+// use same database as server
+mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB connected for seeding"))
   .catch(err => console.log(err));
+
 
 const seedData = async () => {
   try {
