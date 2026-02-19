@@ -129,14 +129,21 @@ export default function Products() {
               (e.currentTarget.style.transform = "scale(1)")
             }
           >
-            {p.image && (
-              <img
-                src={p.image}
-                alt={p.title}
-                width="100%"
-                style={{ borderRadius: "8px" }}
-              />
-            )}
+            {/* IMAGE CLICKABLE */}
+            <Link to={`/products/${p._id}`}>
+              {p.image && (
+                <img
+                  src={p.image}
+                  alt={p.title}
+                  width="100%"
+                  style={{
+                    borderRadius: "8px",
+                    cursor: "pointer"
+                  }}
+                />
+              )}
+            </Link>
+
 
             <Link
               to={`/products/${p._id}`}
