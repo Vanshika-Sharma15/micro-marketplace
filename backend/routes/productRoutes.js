@@ -4,7 +4,7 @@ const Product = require("../models/Product");
 const authMiddleware = require("../middleware/authMiddleware");
 const User = require("../models/User");
 
-// ✅ CREATE PRODUCT (protected)
+// CREATE PRODUCT
 router.post("/", authMiddleware, async (req, res) => {
   try {
     const { title, price, description, image } = req.body;
